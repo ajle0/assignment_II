@@ -22,3 +22,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $user->email = $email;
         $user->password = $hashed_password;
         $user->twofa_code = $twofa_code;
+
+        if ($user->register()) {
+            echo "Registered successfully! Your 2FA code is: " . $twofa_code;
+            header("Location: success.php");
+        } 
