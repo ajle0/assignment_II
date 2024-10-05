@@ -5,3 +5,6 @@ include_once '../src/Authentication.php';
 
 $database = new Database();
 $db = $database->getConnection();
+
+$user = new User($db);
+$auth = new Authentication();
