@@ -23,3 +23,7 @@ class User {
         $stmt->bindParam(':email', $this->email);
         $stmt->bindParam(':password', $this->password);
         $stmt->bindParam(':twofa_code', $this->twofa_code);
+
+        if ($stmt->execute()) {
+            return true;
+        }
