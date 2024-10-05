@@ -17,3 +17,4 @@ class User {
     public function register() {
         $query = "INSERT INTO " . $this->table_name . " (username, email, password, twofa_code)
                   VALUES (:username, :email, :password, :twofa_code)";
+        $stmt = $this->conn->prepare($query);
