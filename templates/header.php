@@ -8,3 +8,6 @@
     <title>User Registration</title>
 </head>
 <body>
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">OOP PHP Project</a>
+    </nav>
