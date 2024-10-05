@@ -8,3 +8,7 @@ class User {
     public $email;
     public $password;
     public $twofa_code;
+
+    public function __construct($db) {
+        $this->conn = $db;
+    }
