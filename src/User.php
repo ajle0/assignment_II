@@ -31,5 +31,11 @@ class User {
         return false;
     
     }
+    // Login a user
+    public function login($email, $password) {
+        $query = "SELECT * FROM " . $this->table_name . " WHERE email = :email";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':email', $email);
+        $stmt->execute();
 }
 ?>
