@@ -1,5 +1,6 @@
 # assignment_II
-Database schema is as follows
+Database schema is as follows;
+
 CREATE DATABASE user_db;
 
 USE user_db;
