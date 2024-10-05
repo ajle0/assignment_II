@@ -37,5 +37,11 @@ class User {
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(':email', $email);
         $stmt->execute();
+
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if (password_verify($password, $user['password'])) {
+            return $user;
+        }
 }
 ?>
