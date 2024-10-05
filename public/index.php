@@ -15,3 +15,8 @@
             <label for="password">Password</label>
             <input type="password" name="password" class="form-control" required>
         </div>
+        <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+</div>
+
+<?php include_once '../templates/footer.php'; ?>
