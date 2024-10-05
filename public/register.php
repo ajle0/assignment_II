@@ -26,4 +26,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if ($user->register()) {
             echo "Registered successfully! Your 2FA code is: " . $twofa_code;
             header("Location: success.php");
-        } 
+        } else {
+            echo "Registration failed.";
+        }
