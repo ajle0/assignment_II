@@ -8,3 +8,8 @@ $db = $database->getConnection();
 
 $user = new User($db);
 $auth = new Authentication();
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
