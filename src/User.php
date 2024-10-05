@@ -43,5 +43,7 @@ class User {
         if (password_verify($password, $user['password'])) {
             return $user;
         }
+        return false;
+    }
 }
 ?>
