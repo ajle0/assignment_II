@@ -17,3 +17,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (!empty($username) && !empty($email) && strlen($password) >= 6) {
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
         $twofa_code = $auth->generate2FACode();
+
+        $user->username = $username;
+        $user->email = $email;
+        $user->password = $hashed_password;
+        $user->twofa_code = $twofa_code;
