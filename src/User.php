@@ -12,3 +12,8 @@ class User {
     public function __construct($db) {
         $this->conn = $db;
     }
+
+    // Register a user
+    public function register() {
+        $query = "INSERT INTO " . $this->table_name . " (username, email, password, twofa_code)
+                  VALUES (:username, :email, :password, :twofa_code)";
