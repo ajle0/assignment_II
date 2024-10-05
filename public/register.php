@@ -29,3 +29,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         } else {
             echo "Registration failed.";
         }
+    } else {
+        echo "Please provide valid inputs.";
+    }
+}
+?>
