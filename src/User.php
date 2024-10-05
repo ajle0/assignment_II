@@ -2,3 +2,9 @@
 class User {
     private $conn;
     private $table_name = "users";
+
+    public $id;
+    public $username;
+    public $email;
+    public $password;
+    public $twofa_code;
