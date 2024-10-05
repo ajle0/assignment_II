@@ -20,3 +20,34 @@
 </div>
 
 <?php include_once '../templates/footer.php'; ?>
+
+<?php
+include_once '../config/db.php';
+include_once '../src/User.php';
+include_once '../src/Authentication.php';
+
+$database = new Database();
+$db = $database->getConnection();
+
+$user = new User($db);
+$auth = new Authentication();
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $twofa_code = $_POST['twofa_code'];
+
+    $logged_in_user = $user->login($email, $password);
+
+    if ($logged_in_user) {
+        if ($auth->validate2FACode($twofa_code, $logged_in_user['twofa_code'])) {
+            echo "Login successful!";
+            header("Location: success.php");
+        } else {
+            echo "Invalid 2FA code.";
+        }
+    } else {
+        echo "Login failed.";
+    }
+}
+?>
