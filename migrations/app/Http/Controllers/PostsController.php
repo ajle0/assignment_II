@@ -8,6 +8,6 @@ class PostsController extends Controller
 {
     public function index()
     {
-        return view('migrations\resources\views\posts\index.blade.php');
+        return view('posts.index');
     }
 }
